@@ -12,6 +12,7 @@ import javax.swing.JTextField;
  * @author squid
  */
 class Nollaa implements Komento {
+    private int lastVal;
     private Sovelluslogiikka sovellus;
     private JTextField tuloskentta;
     private JTextField syotekentta;
@@ -20,13 +21,21 @@ class Nollaa implements Komento {
         this.sovellus = sovellus;
         this.tuloskentta = tuloskentta;
         this.syotekentta = syotekentta;
+        this.lastVal = 0;
     }
 
     @Override
     public void suorita() {
+        this.lastVal = sovellus.tulos();
         sovellus.nollaa();
         this.syotekentta.setText("");
         this.tuloskentta.setText(""+sovellus.tulos());
+    }
+
+    @Override
+    public void peru() {
+        this.syotekentta.setText("");
+        this.tuloskentta.setText(""+this.lastVal);
     }
     
 }

@@ -11,4 +11,6 @@ package ohtu;
  */
 interface Komento {
     void suorita();
+
+    public void peru();
 }

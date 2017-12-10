@@ -33,7 +33,7 @@ public class Tapahtumankuuntelija implements ActionListener {
             edellinen = komento;
         } else {
             // toiminto oli undo
-            //edellinen.peru();
+            edellinen.peru();
             edellinen = null;
         }
         
